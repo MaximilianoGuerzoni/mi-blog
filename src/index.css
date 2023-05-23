@@ -1,0 +1,306 @@
+/*ESTILOS GENERALES*/
+
+body{
+  background: #d1defa;
+  font-family: sans-serif, Arial, Helvetica;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+}
+
+.layout{
+  width: 100%;
+  height: auto;
+
+  display: grid;
+  grid-template-areas:
+      "header header header header"
+      "nav nav nav nav"
+      "content content content lateral"
+      "footer footer footer footer"
+  ;
+  grid-template-rows: 100px 70px auto 70px;
+  grid-template-columns: 1fr 1fr 1fr 25% ;
+}
+
+/*ESTILOS CABECERA*/
+
+.header{
+  grid-area: header;
+  
+  background: linear-gradient(90deg, #f9b418  10%, #f78d1e 100%);
+  text-align: left;
+  font-style: italic;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+.header h1{
+  margin-left: 15px;
+  margin-top: 30px;
+  color:white;
+  
+}
+
+/*ESTILOS DE LA BARRA DE NAVEGACIÓN*/
+
+.nav{
+  grid-area: nav;
+  background: #23252b;
+ 
+}
+
+.nav > ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  
+}
+
+.nav li{
+  padding: 10px;
+}
+
+.nav a {
+  display: block;
+  margin-left: 30px;
+  margin-right: 30px;
+  font-size: 18px;
+  font-weight: lighter;
+  color: white;
+  text-decoration: none;
+  transition: all 300ms;
+}
+
+.nav a:hover{
+  transform: scale(1.1, 1.1);
+}
+
+/*ESTILOS PARA EL CONTENIDO PRINCIPAL*/
+
+.content{
+  grid-area: content;
+  background: linear-gradient(90deg, #0b1316  10%, #1c313a 100%);
+  border:none;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: initial;
+  flex-grow: 1;
+}
+
+.content .jumbo {
+  min-height: 500px;
+}
+
+.articulo-item{
+  flex-grow: 1;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px #ddd;
+  margin: 20px;
+  text-align: left;
+  max-height: 225px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  padding-left: 25px;
+  padding-right: 25px;
+  display:flex;
+}
+
+.jumbo{
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px #ddd;
+  margin: 20px;
+  width: 85%;
+  padding: 55px auto;
+  min-height: 200px;
+  
+}
+
+
+.jumbo .button{
+  padding:10px;
+
+  
+}
+
+ .title a{
+  text-decoration: none;
+  color:black;
+  font-size: 30px;
+} 
+
+.jumbo .mascara{
+ max-width: 100%;
+ max-height: 150px;
+ overflow: hidden;
+  
+}
+
+
+.jumbo h1{
+  font-size: 30px;  
+  color: #444
+}
+
+.jumbo p{
+  display: block;
+  margin-bottom: 20px;
+  padding-bottom: 30px;
+
+}
+
+.jumbo a .button{
+ padding: 0px;
+
+}
+
+.button, 
+button,
+.edit,
+input[type="submit"],
+input[type="button"]{
+  text-decoration: none;
+  width: 100px;
+  background: #f9a61b;
+  color: white;
+  border: 0;
+  outline: 0;
+  padding:15px;
+  border-radius: 3px;
+  margin-top:15px;
+  text-transform: capitalize;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 300ms;
+}
+
+.articulo-item .edit{
+  margin-right:20px;
+}
+
+.articulo-item .edit:hover{
+  background: #9b0202;
+}
+
+.articulo-item .delete:hover{
+  background: #9b0202;
+}
+
+.articulo-item .mascara {
+  width: 20%;
+  overflow: hidden;
+  margin-right: 40px;
+}
+
+.articulo-item .mascara img{
+  width: 100%;
+  
+}
+
+/*ESTILOS BARRA LATERAL*/
+
+.lateral{
+  grid-area: lateral;
+  background: #23252b;
+  border-left: 1px solid #363535;
+  padding: 20px;
+  min-height: 450px;
+}
+
+.lateral > div{
+  box-sizing: border-box;
+  width: 90%;
+  margin: 20px;
+  padding: 20px;
+  padding-top: 10px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px #ddd;
+}
+
+input[type="text"],
+ textarea
+{
+  display: block;
+  margin: 0 auto;
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 5px;
+  background: #f6f7f9;
+  color: #454545;
+  width: 80%;
+  opacity: 4;
+  outline: 0;
+  border-color: transparent;
+}
+
+.edit_form{
+  border-top: 1px solid #ddd;
+  margin-top: 10px;
+}
+
+/*ESTILOS PARA EL PIE DE PÁGINA*/
+.footer{
+  grid-area: footer;
+  background: linear-gradient(90deg, #0b1316  10%, #1c313a 100%);
+  color: #ffffff;
+  border-top:1px solid #363535;
+  text-align: left;
+  line-height: 68px;
+  padding-left: 25px;
+}
+
+.footer a{
+  color: #ffffff;
+  text-decoration: none;
+}
+
+@media (max-width: 1085px){
+  .content {
+      flex-flow: column wrap;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .articulo-item{
+      width: 80%;
+  }
+}
+
+
+/* Form group */
+.edit-form{
+  border-top: 1px solid white;
+  margin-top: 1px;
+}
+
+.form-group{
+  width: 50% ;
+  margin: auto;
+  
+}
+
+.form-group label{
+  margin-bottom: 5px;
+  display: block;
+  text-align: left;
+  color: #444;
+}
+.form-group input[type="file"],
+.form-group input[type="text"],
+.form-group textarea
+{
+border: 1px solid #ddd;
+outline: 0px;
+width: 100%;
+margin-top: 0px;
+margin-bottom: 15px;
+}
